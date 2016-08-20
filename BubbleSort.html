@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js冒泡排序</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function bubbleSort(arr){
+			var temp;
+			var exchange;
+			for(var i=0;i<arr.length;i++){
+				exchange=false;
+				for(var j=arr.length-2;j>=i;j--){
+					if(eval(arr[j+1])>eval(arr[j])){
+
+						temp=arr[j+1];
+						arr[j+1]=arr[j];
+						arr[j]=temp;
+
+						exchange=true;
+					}
+				}
+				if(!exchange){
+					break;
+				}
+			}
+			return arr;
+		}
+
+		function display(el){
+			str=document.getElementById('source').value;
+			strs=bubbleSort(str.split(','));
+
+			str="";
+			for(var i=0;i<strs.length;i++){
+				str+=strs[i]+' ';
+			}
+			alert(str);
+		}
+</script>
+</head>
+<body>
+	<center>
+		<h1>利用流程控制语句实现冒泡排序</h1>
+		<hr>
+		<br>
+		<h5>显示信息如下：</h5>
+		<br>
+		<pre>
+			请输入待排序序列：<input type="text" id="source"><input type="button" value="排序" onClick="display();"><span>（输入的序列请以半角逗号隔开）</span>
+			
+		</pre>
+	</center>
+</body>
+</html>
