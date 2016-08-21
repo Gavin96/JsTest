@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>strSFR</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<pre>
+		<div style="margin-left:-200px;font-size:25px;font-weight:bold;">
+			str Search Find Replace
+		</div>
+		<hr>
+
+		<script type="text/javascript">
+
+			function IndexDemo(str2){
+				var str1="BABEBIBOBUBABEBIBOBU";
+				var s=str1.indexOf(str2);
+				return(s);
+			}
+
+			function lastIndexDemo(str2){                  //按照逆序查找子字符串在字符串中的位置
+				var str1="BABEBIBOBUBABEBIBOBU";
+				var s=str1.lastIndexOf(str2);
+				return(s);
+			}
+
+			with(document){
+				write('执行函数IndexDemo("EBI")的结果如下:');         //调用IndexDemo函数并打印
+				writeln(IndexDemo("EBI"));
+				writeln();
+				write('                执行函数lastIndexDemo("EBI")的结果如下:');
+				writeln(lastIndexDemo('EBI'));
+			}
+
+		</script>
+
+		<hr>
+
+		<script type="text/javascript">
+
+			function SubstrDemo(){
+				var s, ss;
+				var s="The rain in Spain falls mainly in the plain.";
+				ss=s.substr(12,5);                          //获取自12号(第13位)字母开始的5个字符
+				return(ss);
+			}
+
+			function SubstringDemo(){
+				var ss;
+				var s="The rain in Spain falls mainly in the plain.";
+				ss=s.substring(12,17);                        //取字符串，自12号到17号(此号不取)
+				return(ss);
+			}
+
+			with(document){
+				write('执行函数SubstrDemo()的结果如下:');
+				writeln(SubstrDemo());
+				writeln();
+				write('                执行函数SubstringDemo()的结果如下:');
+				writeln(SubstringDemo());
+			}
+
+		</script>
+
+		<hr>
+
+		<script type="text/javascript">
+
+			function ReplaceDemo(){
+				var r, re;
+				var ss="The man hit the ball with the bat. ";
+				ss +="while the fielder caught the ball with the glove.";
+				re= /The/g;                                   //创建正则表达式
+				r =ss.replace(re,"A");                         //用"A"替代"The"
+				return(r);
+			}
+
+			function ChangeDemo(){
+				var r ,re;
+				var ss ="The rain in Spain falls mainly in the plain.";
+				re = /(\S+)(\s+)(\S+)/g;
+				r = ss.replace(re, "$3 $2 $1");
+				return(r);
+			}
+
+			function f2c(s){
+				var test = /(\d+(\.\d*)?)F\b/g;                     //初始化模式
+				return(s.replace(test,function($0,$1,$2){
+					return((($1-32)*5/9)+"C");
+				}
+			   )
+			  );
+			}
+
+			with(document){
+
+				write('执行函数ReplaceDemo()的结果如下:');
+				writeln(ReplaceDemo());
+				writeln();
+				write('                执行函数ChangeDemo()的结果如下:');
+				writeln(ChangeDemo());
+				writeln();
+				write('                执行函数f2c("Water freezes at 32F and boils at 212F.")的结果如下:');
+				writeln(f2c("Water freezes at 32F and boils at 212F."));
+			}
+
+		</script>
+	</pre>
+</body>
+</html>
