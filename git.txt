@@ -1,0 +1,46 @@
+﻿--git init 
+
+----git clone https://......
+----git clone git://........
+
+------git remove 
+
+
+
+--git add <filename>
+
+----git add .
+
+-------git rm <filename>
+
+--git commit -m "msg"
+
+----git push origin master/branchname
+
+-------git remote add origin <server>
+
+
+--git pull
+---gitk //view the flow of branch
+----git gui //view the flow of branch by guiView
+
+----git checkout -- filename //return this file to that unmodified stauts
+----git reset HEAD filename //仅用HEAD指向的目录树重置暂存区,工作区不受影响,相当于将之前用git add命令更新到暂存区的内容撤出暂存区.引用也未改变,因为引用重置到HEAD相当于没有重置.
+
+--git checkout -b Gavin  //new the Gavin branch
+
+----git checkout master/otherBrancheName
+
+------git branch -a //view all the branches
+
+--------git checkout anna //switch to anna branch
+
+------git branch -d <branch>
+
+--------git push origin <branch>
+
+
+--git merge <branchName>
+
+----git diff <sourceBranch> <targetBranch>  //view the difference
+
