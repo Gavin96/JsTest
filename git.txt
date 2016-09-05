@@ -31,7 +31,7 @@
 
 ----git checkout master/otherBrancheName
 
-------git branch -a //view all the branches
+------git branch -a //see what branch you are on now plus view all the branches
 
 --------git checkout anna //switch to anna branch
 
