@@ -1,0 +1,43 @@
+<html style = "font-size: 15px; line-height: 25px;font-family: 'Microsoft YaHei' ">
+<script src = "http://vuejs.org/js/vue.js"></script>
+
+<div id = "app">
+	{{message}}
+</div>
+
+<div id = "app2">
+	<span v-bind:title = "message">  <!-- 指令带有前缀v-，表示为Vue.js提供的特殊属性 -->
+		Hover here to see dynamically bound title
+	</span>
+</div>
+
+<div id = "app3">
+	<p v-if = "seen">Now you see me</p>
+</div>
+
+<div id = "app4">
+	<ol>
+		<li v-for = "todo in todos">
+			{{todo.text}}
+		</li>
+	</ol>
+</div>
+
+<div id = "app5">
+	<p>{{message}}</p>
+	<button v-on:click = "reverseMessage">Reverse Msg</button>
+</div>
+
+<div id = "app6">
+	<p>{{msg}}</p>
+	<input v-model="msg">
+</div>
+
+<div id = "app7">
+	<ol>
+		<todo-item v-for="item in groceryList" v-bind:todo = "item"></todo-item>
+	</ol>
+</div>
+
+<script src = "test1.js"></script>
+</html>
